@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+/* Dar margen a todo el documento*/
+*{ 
+    margin: 0;
+    padding: 0;
+}
+/* Poner la imagen y el color de fondo*/
+body{
+    
+    background-image: url(images/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-color: hsl(257, 40%, 49%);
+}
+/* Establecer las medidas de lo que está dentro del div container*/
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+    height: 100vh;
+}
+/* Establecer medidas y posicion del flexbox que contiene todos los div dentro de wrapper*/
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0 2rem;
+}
+/* Establecer medidas y el padding del logo de la página*/
+.header img{
+    width: 170px;
+    padding-bottom: 20px;
+}
+/* Establece un flexbox que contiene la imagén principal y los textos de la página*/
+.main{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+/* Da el fortmato al texto del título*/
+.hero-text h1{
+    color: #FFF;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 36px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+/* Da el fortmato al texto del párrafo*/
+.hero-text p{
+    color: #FFF;
+    font-family: 'Poppins',sans-serif;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+/* Da el fortmato al texto del boton registrer*/
+.hero-text boton{
+    display: inline-block;
+    font-family: 'Poppins',sans-serif;
+    background-color: #FFF;
+    padding: 13px 50px;
+    border-radius: 25px; 
+    text-decoration: none;
+    box-shadow: 0 8px 17px -8px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+/* Da la función de que cuando se ponga el cursor en el botón cambie de color*/
+.hero-text boton:hover{
+    background-color: hsl(300, 69%, 71%);
+    color: white;
+}
+/* Mueve los iconos de las redes IcRedesSocialeses a la derecha*/
+.IcRedesSociales{
+    text-align: right;
+}
+/* Da el color y tamaño a los iconos de las redes IcRedesSocialeses*/
+.IcRedesSociales iconos i{
+    color: #FFF;
+    position: relative;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+/* Aplica el margen a los iconos menos al primero*/
+.IcRedesSociales iconos:not(:first-child){
+    margin-left: 2rem;
+}
+/* Modifica el margen solo del 2do elemento*/
+.IcRedesSociales iconos:nth-child(2){
+    margin-left: 2.4rem;
+}
+/* Borde circular de los iconos de redes IcRedesSocialeses*/
+.IcRedesSociales iconos i::after{
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    left: -14px;
+    bottom: -13px;
+    transition: all 0.3s ease;
+}
+/* Da la función de que cuando se ponga el cursor en los iconos cambien de color*/
+.IcRedesSociales iconos:hover i{
+    color: hsl(300, 69%, 71%);
+}
+/* Da la función de que cuando se ponga el cursor los bordes de los iconos cambien de color*/
+.IcRedesSociales iconos i:hover::after{
+    border-color:hsl(300, 69%, 71%);
+}
+
+/*Cambios en el formato de la página según el tamaño de la pantalla*/
+
+/*Reduce el tamaño de la imagen principal*/
+@media only screen and (max-width: 1440px){
+    .hero-img img{
+        width: 100%;
+    }
+}
+/*Establece que cuando se haga chica la ventana el contenido se muestre en una sola columna*/
+@media only screen and (max-width: 768px){
+    .main{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text h1{
+        line-height: 1.5;
+        font-size: 26px;
+    }
+    .IcRedesSociales{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .hero-text boton{
+        padding: 10px 70px;
+    }
+} 
